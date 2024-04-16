@@ -2,14 +2,19 @@
     <div class="plan">
         <div class="description">
           <span class="title">
-            {{ name }}
+            {{ name }} 👍 likes {{ likes }}
           </span>
         </div>
       </div>
     </template>
 
 <script setup>
-const props = defineProps(['name']);
-console.log(props.name);
+defineProps ({
+    name: String,
+    likes: {
+        type: Number,
+        default: 0,
+    }
+});
 </script>
 
