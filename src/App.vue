@@ -1,6 +1,13 @@
 <script setup>
 import planPicker from './components/plan-picker.vue';
+//Componentes Titulo
+import vue from 'vue';
 
+function Planes(props) {
+    return <h1>{props.planes}</h1>
+}
+
+export default 
 </script>
 
 <template>
@@ -12,11 +19,9 @@ import planPicker from './components/plan-picker.vue';
   </header>
 
   <div class="content">
-    <h1 class="title">Coffee Plans</h1>
+    
 
-    <h2 class="subtitle">
-      Viajamos por el mundo para encontrar el mejor café de origen único para ti
-    </h2>
+   
 
     <plan-picker />
     

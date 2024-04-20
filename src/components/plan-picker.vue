@@ -15,5 +15,14 @@ const plans = ref([
   "El adicto",
   "El viajero",
   "El Colombiano"]);
+//Componentes Subtitulo
+import vue from 'vue';
+
+function Viajes(props) {
+    return <h2>{props.viajes}</h2>;
+}
+
+export default 
+
 </script>
 
