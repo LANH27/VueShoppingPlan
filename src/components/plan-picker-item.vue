@@ -1,6 +1,7 @@
 <template>
-    <div @click="select" 
-    :class="{ 'selected-plan' : selected}" 
+    <div 
+    @click="select"
+    :class="{'selected-plan':selected}" 
     class="plan">
         <div class="description">
           <span class="title">
@@ -12,17 +13,23 @@
 
 <script setup>
 import { ref } from 'vue';
-import PlanPicker from './plan-picker.vue';
-const selected = ref(false);
-const select = () => {
-  selected.value = true
-}
-defineProps ({
+
+//Creando un evento
+const emit = defineEmits(['select']);
+const prps = defineProps ({
     name: {
     type: String,
     required: true
     }
 });
+
+const selected = ref(false);
+const select = () => {
+  selected.value = true
+//Detomando el evento
+  emit('select', props.name);
+}
+
 </script>
 <style scoped>
 .selected-plan {
