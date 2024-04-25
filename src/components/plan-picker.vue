@@ -13,6 +13,6 @@ import planItem from './plan-picker-item.vue';
 const plans = ref([
   "El soltero",
   "El adicto",
-  "El viajero",
-  "El Colombiano"]);
+  "El viajero", ]);
+</script>
 

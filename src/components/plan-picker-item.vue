@@ -1,15 +1,22 @@
 <template>
-    <div class="plan">
+    <div @click="select" 
+    :class="{ 'selected-plan' : selected}" 
+    class="plan">
         <div class="description">
           <span class="title">
-            {{ name }} 
+            {{ name }} {{ selected ? "👍" : ""}}
           </span>
         </div>
       </div>
     </template>
 
 <script setup>
-
+import { ref } from 'vue';
+import PlanPicker from './plan-picker.vue';
+const selected = ref(false);
+const select = () => {
+  selected.value = true
+}
 defineProps ({
     name: {
     type: String,
@@ -17,5 +24,10 @@ defineProps ({
     }
 });
 </script>
+<style scoped>
+.selected-plan {
+  background-color: aqua;
+}
+</style>
 
 
