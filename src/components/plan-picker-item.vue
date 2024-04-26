@@ -5,14 +5,14 @@
     class="plan">
         <div class="description">
           <span class="title">
-            {{ name }} {{ selected ? "👍" : ""}}
+            {{ name }} ultimo seleccionado: {{ selectedPlan}}
           </span>
         </div>
       </div>
     </template>
 
 <script setup>
-import { ref } from 'vue';
+
 
 //Creando un evento
 const emit = defineEmits(['select']);
@@ -20,12 +20,15 @@ const prps = defineProps ({
     name: {
     type: String,
     required: true
-    }
+    },
+    selectPlan: {
+      type: String
+    },
 });
 
-const selected = ref(false);
+
 const select = () => {
-  selected.value = true
+
 //Detomando el evento
   emit('select', props.name);
 }
