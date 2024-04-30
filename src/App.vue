@@ -1,6 +1,7 @@
 <script setup>
 import planPicker from './components/plan-picker.vue';
-
+import { ref } from 'vue';
+const showPlans = ref(true);
 </script>
 
 <template>
@@ -12,12 +13,15 @@ import planPicker from './components/plan-picker.vue';
   </header>
 
   <div class="content">
-  <h1 class="title">Coffe Plans</h1>
-  <h2 class="subtitle">
-    Viajamos por el mundo para encontrar el mejor cafe de origen unico para ti 
-  </h2> 
-  
-    <plan-picker />
+    <h1 class="title">Coffe Plans</h1>
+    <h2 class="subtitle">
+      Viajamos por el mundo para encontrar el mejor cafe de origen unico para ti 
+    </h2> 
+    <label>
+      <input type="checkbox" v-model="showPlans">
+      Mostrar Selector de Planes
+    </label>
+    <plan-picker v-if="showPlans" />
     
   </div>
 </template>

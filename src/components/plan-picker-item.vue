@@ -18,7 +18,7 @@ import { computed } from 'vue';
 
 //Creando un evento
 const emit = defineEmits(['select']);
-const prps = defineProps ({
+const props = defineProps ({
     name: {
     type: String,
     required: true
@@ -36,7 +36,7 @@ const select = () => {
 }
 // creando propiedad computada
 const selected = computed (() => {
-  return prps.name === prps.selectPlan;
+  return props.name === props.selectPlan;
 });
 </script>
 <style scoped>
